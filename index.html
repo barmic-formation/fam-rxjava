@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>ReactiveX</title>
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/solarized-dark.min.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>Reactive Extensions</h2>
+				<h3>RxJava</h3>
+			</section>
+
+			<section>
+				<h2>Programmation réactive</h2>
+				<p>Paradigme consistant à modéliser le logiciel comme un flot d'évènements modifiant l'état du système</p>
+
+				<ul>
+					<li>Orienté message : chaque évènement est un nouveau message reçu</li>
+    				<li>Asynchrone : les modifications peuvent produire de nouveaux évènements</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Objectifs</h2>
+				<ul>
+					<li>Performance/Scalabilité</li>
+    				<li>Robustesse/tolérence aux pannes</li>
+    				<li>Maintenabilité</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h2>rx.Observable</h2>
+					<p class="fragment fade-up">patron de conception : itérateur et observer</p>
+					<p class="fragment fade-down">composition des traitements (comme avec les Stream)</p>
+					<p class="fragment fade-right">asynchrone au besoin</p>
+				</section>
+
+				<section>
+					<h2>Pattern observer</h2>
+					<img src="img/observer.png" />
+				</section>
+
+				<section>
+					<h2>Classe principales</h2>
+					<ul>
+						<li><code>Observable</code> au quel on souscrit</li>
+						<li><code>Observer</code> object qui souscrit à l'Observable
+							<ul>
+								<li><code>onNext()</code></li>
+								<li><code>onCompleted()</code></li>
+								<li><code>onError()</code></li>
+							</ul>
+						</li>
+						<li>Subscription permet de gérer les sousscription</li>
+					</ul>
+				</section>
+			</section>
+
+			<section data-background="img/fuck.jpg" data-background-size="contain">
+				<h1>Talk is cheap!</h1>
+				<h2>Show me the code!</h2>
+			</section>
+
+			<section>
+				<section>
+					<h2>Documentation</h2>
+					<a href="http://reactivex.io/" target="_blank">
+						<img src="img/rx.png" />
+					</a>
+				</section>
+				<section>
+					<h2>Hot Observable</h2>
+					<img src="img/hot" />
+				</section>
+			</section>
+
+			<section>
+				<h2>Intérêts</h2>
+				<ul>
+					<li class="fragment fade-down">composition des traitements</li><!-- exemple de google -->
+					<li class="fragment fade-up">testabilité</li>
+					<li class="fragment fade-right">lisibilité (quand c'est bien fait !)</li>
+					<li class="fragment fade-left">scalabilité</li>
+					<li class="fragment fade-up">monitorabilité</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Adoption</h2>
+				<ul>
+					<li><a href="http://reactivex.io/" target="_blank">bibliothèques</a></li>
+					<li>retrofit, client mongo,…</li>
+					<li>autre :
+						<ul>
+							<li><a href="https://projectreactor.io/" target="_blank">Project Reactor</a></li>
+							<li><a href="http://www.reactive-streams.org/" target="_blank">Reactive Streams (Java9)</a></li>
+						</ul>
+					</li>
+			</section>
+
+			<section>
+				<img src="img/early_adopter.jpg" />
+			</section>
+		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// Required, even if empty.
+		Reveal.initialize({
+		});
+	</script>
+</body>
+</html>
